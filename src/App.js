@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { NavBar } from './components';
+import { MovieList, NavBar } from './components';
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -32,7 +32,7 @@ const search = async (e) => {
   return (
     <div className="App">
       <NavBar search={search} inputValue={inputValue} setInputValue={setInputValue}/>
-      {isLoading ? "Loading":"Not Loading"}
+      <MovieList isLoading={isLoading} movieList={movies}/>
     </div>
   );
 }
